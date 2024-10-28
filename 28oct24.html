@@ -20,6 +20,14 @@
         
         function moveXz(){
             left = left + step;
+            if (left > 1000){
+                step = step *(-1);
+                xz.style.transform = 'rotateY(180deg)';
+            }
+            if (left < 0){
+                    step = step *(-1);
+                    xz.style.transform = 'rotateY(0deg)';
+            }
             xz.style.left = left + 'px';
         }
         setInterval(moveXz, 25);
